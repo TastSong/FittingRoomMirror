@@ -50,3 +50,33 @@ private void LoadModel(string modelDir)
 
   scaler.Start();
 }
+```
+* 完成模型的销毁
+* 完成模型的加载
+```c#
+void MenuWindow(int windowID)
+{
+  menuWindowRectangle = new Rect(Screen.width - 160, 40, 150, Screen.height - 60);
+
+  if (modelThumbs != null)
+  {
+    GUI.skin.button.fixedWidth = 120;
+    GUI.skin.button.fixedHeight = 163;
+
+    scroll = GUILayout.BeginScrollView(scroll);
+    selected = GUILayout.SelectionGrid(selected, modelThumbs, 1);
+
+    if (selected >= 0 && selected < modelNames.Length && prevSelected != selected)
+    {
+      prevSelected = selected;
+      LoadModel(modelNames[selected]);
+    }
+
+    GUILayout.EndScrollView();
+
+    GUI.skin.button.fixedWidth = 0;
+    GUI.skin.button.fixedHeight = 0;
+  }
+}
+```
+* 试衣镜逻辑判断
