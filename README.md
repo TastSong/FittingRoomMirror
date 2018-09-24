@@ -81,6 +81,5 @@ void MenuWindow(int windowID)
 ```
 * 试衣镜逻辑判断
 ```C#
-* public void UserDetected(long userId, int userIndex)
-* public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture,
-  KinectInterop.JointType joint, Vector3 screenPos)
+* public void UserDetected()
+* public bool GestureCompleted()
