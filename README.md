@@ -81,5 +81,33 @@ void MenuWindow(int windowID)
 ```
 * 试衣镜逻辑判断
 ```C#
-* public void UserDetected()
-* public bool GestureCompleted()
+public void UserDetected(long userId, int userIndex)
+
+public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture,
+                              float progress, KinectInterop.JointType joint, Vector3 screenPos)
+public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture,
+                              KinectInterop.JointType joint, Vector3 screenPos)
+```   
+* 实现手势监听
+```C#
+void Update()
+{
+    if (!gestureListener)
+        return;
+    if (gestureListener.IsSwipeLeft())
+    {
+        selected++;
+        selected = (selected % numberOfModels);
+        Debug.Log("SwipeLeft.");
+    }
+
+    else if (gestureListener.IsSwipeRight())
+    {
+        selected--;
+        selected = (selected % numberOfModels);
+        Debug.Log("SwipeRight.");
+    }
+
+}
+```
+* 左右挥手换衣逻辑
