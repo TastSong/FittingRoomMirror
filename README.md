@@ -113,11 +113,11 @@ void Update()
 * 左右挥手换衣逻辑
 
 ## 添加衣服模型方法
-1. 对于每个fbx模型，导入模型并在Unity编辑器的Assets-view中选择它。
-2. 在“检查器”中选择“钻机”选项卡。将AnimationType设置为'Humanoid'，将AvatarDefinition设置为'从此模型创建'。
-3. 按应用按钮。然后按配置按钮检查是否正确分配了所有必需的关节。服装模特通常不使用所有关节，这可能使头像定义无效。在这种情况下，您可以手动分配缺失的关节（以红色显示）。
+1. 对于每个fbx模型，导入模型并在Unity编辑器的`Assets-view`中选择它。
+2. 在`Inspector`中选择`Rig-tab`选项卡。将`AnimationType`设置为`Humanoid`，将`AvatarDefinition`设置为`Create from this model`。
+3. 按`Apply`按钮。然后按`Configure`按钮检查是否正确分配了所有必需的关节。服装模特通常不使用所有关节，这可能使头像定义无效。在这种情况下，您可以手动分配缺失的关节`（以红色显示）`。
 4. 请记住：模型中的关节位置必须与Kinect关节的结构相匹配。你可以看到它们，例如在KinectOverlayDemo2中。否则，模型可能无法正确覆盖用户的身体。
-5. 在FittingRoomDemo / Resources-folder中为您的模型类别（衬衫，裤子，裙子等）创建一个子文件夹。
+5. 在FittingRoomDemo/Resources-folder中为您的模型类别（衬衫，裤子，裙子等）创建一个子文件夹。
 6. 在模型类别文件夹中为p.1模型中导入的所有导入的后续编号（0000,0001,0002等）创建子文件夹。
 7. 将模型移动到这些数字文件夹中，每个文件夹一个模型，以及所需的材料和纹理。将模型的fbx文件重命名为'model.fbx'。
 8. 您可以在相应的模型文件夹中以jpeg格式（100 x 143px，24bpp）为每个模型放置预览图像。然后将其重命名为'preview.jpg.bytes'。如果您没有放置预览图像，试衣间演示将在模型选择菜单中显示“无预览”。
